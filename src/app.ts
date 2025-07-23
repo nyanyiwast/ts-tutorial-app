@@ -2,15 +2,12 @@
 // a blueprint of an object
 
 class Invoice {
-    client: string;
-    details: string;
-    amount: number;
 
-    constructor(c: string, d: string, a: number){
-        this.client = c
-        this.details = d
-        this.amount = a
-    }
+    constructor(
+       readonly client: string,
+       private details: string,
+       public amount: number,
+    ) {}
 
     format() {
         return `${this.client} owes $ ${this.amount} for ${this.details}`
@@ -29,6 +26,10 @@ const form = document.querySelector('.new-item-form') as HTMLFormElement;
 console.log(form.children);
 invoices.push(invoiceOne)
 invoices.push(invoiceTwo)
+
+invoices.forEach(invoice => {
+    console.log(invoice.client, invoice.amount, invoice.format())
+})
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;
