@@ -1,18 +1,32 @@
-let character = 'sed'
-let age = 30;
-let isLoggedIn = false;
+// arrays
+let names = ['mario', 'luigi', 'cart', 'toad'];
+names.push('boo');
+// names.push(2); returns error because '2' is not a string
+// names[0] = 2; // returns error because '2' is not a string
 
-// character = 3; // Error: Type 'number' is not assignable to type 'string'
-character = 'sed tha dev'; 
-// age = "three"; // Error: Type 'string' is not assignable to type 'number'
-age = 33;
-// isLoggedIn = 1; // Error: Type 'number' is not assignable to type 'boolean'
-isLoggedIn = false;
+let jsMixedArray = ['mario', 2, 'luigi', 3];
+let mixedArray: (string | number)[] = [1, "mario", 2, "luigi"];
 
-// function to calculate the circumference of a circle
+mixedArray.push('toad');
+mixedArray.push(3);
+// mixedArray.push(true); // returns error because 'true' is not a string or number
+mixedArray[0] = 2;
 
-const circumference = (diameter: number) => {
-    return Math.PI * diameter;
+
+// objects - additional properties can't be added because of strict mode 
+let ninja = {
+  name: 'mario',
+  belt: 'black',
+  age: 30
+};
+
+ninja.name = 'luigi';
+// ninja.age = '30'; // returns error because '30' is not a number
+
+ninja = {
+    name: 'yoshi',
+    belt: 'green',
+    //age: 25 age has to be present in the object
+    age: 25,
+    // skills: [] skills is not allowed because of strict mode and was not defined in the original object
 }
-
-console.log(circumference(2));
