@@ -1,48 +1,32 @@
-// explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+// any type - variables that change in the future
 
-// age = 'luigi' returns an error because 'age' is defined as a number
-age = 30;
-isLoggedIn = true;
-character = 'mario';
+let age: any = 25;
+console.log(age);
 
-// arrays
-let ninjas: string[];
-ninjas = ['shaun', 'crystal', 'ryu'];
-// ninjas = [20, 30, 40] returns an error because 'nin
-ninjas.push('china-li'); // not valid operation as ninjas is !== [] when initialized
+age = [1, "two"];
+console.log(age);
 
-let initializedNinjas: string[] = [];
-initializedNinjas.push('yos'); // valid operation since we initialized it as an empty array
+age = { name: "John" };
+console.log(age);
 
-// union types
-let mixedArray: (string | number)[] = [];
-mixedArray.push("hello", 1); // returns 
-//mixedArray.push(false) // returns an error as bool type was not declared in mixedArray
+let mixed: unknown[] = [];
+mixed.push(5);
+mixed.push("hello");
+console.log(mixed);
 
-console.log(mixedArray)
+let mixed2: any = {
+    name: "Jane",
+    age: 30,
+    isStudent: false,
+}
+let mixed3 = {...mixed2, students: {name: "Doe", age: 25}};
+console.log(mixed2);
+console.log(mixed3);
 
-let mixedVariableUid: string|number; //parentheses are optional but mandatory for arrays
-mixedVariableUid = '123';
-mixedVariableUid = 123;
-
-// objects
-let usersObject: object;
-usersObject = { name: 'shaun', age: 30 }; // valid object
-usersObject = []; // valid object as arrays are also objects in JS
-
-let loggedInUsers: { 
-    name: string;
-    uid: string | number;
-    isLoggedIn: boolean;
+let mixed4: {name: any, age: unknown};
+mixed4 = {
+    name: 2,
+    age: [1,2,3,4]
 }
 
-loggedInUsers = {
-    name: 'mario',
-    uid: '123',
-    isLoggedIn: true
-}
-
-console.log(loggedInUsers);
+console.log(mixed4);

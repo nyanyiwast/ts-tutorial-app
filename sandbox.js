@@ -1,34 +1,36 @@
-// explicit types
-var character;
-var age;
-var isLoggedIn;
-// age = 'luigi' returns an error because 'age' is defined as a number
-age = 30;
-isLoggedIn = true;
-character = 'mario';
-// arrays
-var ninjas;
-ninjas = ['shaun', 'crystal', 'ryu'];
-// ninjas = [20, 30, 40] returns an error because 'nin
-ninjas.push('china-li'); // not valid operation as ninjas is !== [] when initialized
-var initializedNinjas = [];
-initializedNinjas.push('yos'); // valid operation since we initialized it as an empty array
-// union types
-var mixedArray = [];
-mixedArray.push("hello", 1); // returns 
-//mixedArray.push(false) // returns an error as bool type was not declared in mixedArray
-console.log(mixedArray);
-var mixedVariableUid; //parentheses are optional but mandatory for arrays
-mixedVariableUid = '123';
-mixedVariableUid = 123;
-// objects
-var usersObject;
-usersObject = { name: 'shaun', age: 30 }; // valid object
-usersObject = []; // valid object as arrays are also objects in JS
-var loggedInUsers;
-loggedInUsers = {
-    name: 'mario',
-    uid: '123',
-    isLoggedIn: true
+// any type - variables that change in the future
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
-console.log(loggedInUsers);
+var age = 25;
+console.log(age);
+age = [1, "two"];
+console.log(age);
+age = { name: "John" };
+console.log(age);
+var mixed = [];
+mixed.push(5);
+mixed.push("hello");
+console.log(mixed);
+var mixed2 = {
+    name: "Jane",
+    age: 30,
+    isStudent: false,
+};
+var mixed3 = __assign(__assign({}, mixed2), { students: { name: "Doe", age: 25 } });
+console.log(mixed2);
+console.log(mixed3);
+var mixed4;
+mixed4 = {
+    name: 2,
+    age: [1, 2, 3, 4]
+};
+console.log(mixed4);
