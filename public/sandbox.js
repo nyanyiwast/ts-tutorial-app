@@ -1,13 +1,21 @@
 "use strict";
-const logDetails = (uid, item) => {
-    console.log(`${item} has uid of ${uid}`);
+let greet;
+// what this function can take, the structure, arguments, and return type
+// example 1
+let greetings;
+greetings = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-const greet = (user) => {
-    console.log(`${user.name} says hello`);
+// example 2
+let calc;
+calc = (num1, num2, action) => {
+    if (action === "add") {
+        return num1 + num2;
+    }
+    return num1 - num2;
 };
-const logDetailsWithAlias = (uid, item) => {
-    console.log(`${item} has uid of ${uid}`);
-};
-const greetWithAlias = (user) => {
-    console.log(`${user.name} says hello`);
+// example 3
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 };
