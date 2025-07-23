@@ -1,32 +1,48 @@
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+
+// age = 'luigi' returns an error because 'age' is defined as a number
+age = 30;
+isLoggedIn = true;
+character = 'mario';
+
 // arrays
-let names = ['mario', 'luigi', 'cart', 'toad'];
-names.push('boo');
-// names.push(2); returns error because '2' is not a string
-// names[0] = 2; // returns error because '2' is not a string
+let ninjas: string[];
+ninjas = ['shaun', 'crystal', 'ryu'];
+// ninjas = [20, 30, 40] returns an error because 'nin
+ninjas.push('china-li'); // not valid operation as ninjas is !== [] when initialized
 
-let jsMixedArray = ['mario', 2, 'luigi', 3];
-let mixedArray: (string | number)[] = [1, "mario", 2, "luigi"];
+let initializedNinjas: string[] = [];
+initializedNinjas.push('yos'); // valid operation since we initialized it as an empty array
 
-mixedArray.push('toad');
-mixedArray.push(3);
-// mixedArray.push(true); // returns error because 'true' is not a string or number
-mixedArray[0] = 2;
+// union types
+let mixedArray: (string | number)[] = [];
+mixedArray.push("hello", 1); // returns 
+//mixedArray.push(false) // returns an error as bool type was not declared in mixedArray
 
+console.log(mixedArray)
 
-// objects - additional properties can't be added because of strict mode 
-let ninja = {
-  name: 'mario',
-  belt: 'black',
-  age: 30
-};
+let mixedVariableUid: string|number; //parentheses are optional but mandatory for arrays
+mixedVariableUid = '123';
+mixedVariableUid = 123;
 
-ninja.name = 'luigi';
-// ninja.age = '30'; // returns error because '30' is not a number
+// objects
+let usersObject: object;
+usersObject = { name: 'shaun', age: 30 }; // valid object
+usersObject = []; // valid object as arrays are also objects in JS
 
-ninja = {
-    name: 'yoshi',
-    belt: 'green',
-    //age: 25 age has to be present in the object
-    age: 25,
-    // skills: [] skills is not allowed because of strict mode and was not defined in the original object
+let loggedInUsers: { 
+    name: string;
+    uid: string | number;
+    isLoggedIn: boolean;
 }
+
+loggedInUsers = {
+    name: 'mario',
+    uid: '123',
+    isLoggedIn: true
+}
+
+console.log(loggedInUsers);

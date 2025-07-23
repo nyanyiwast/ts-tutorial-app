@@ -1,26 +1,34 @@
+// explicit types
+var character;
+var age;
+var isLoggedIn;
+// age = 'luigi' returns an error because 'age' is defined as a number
+age = 30;
+isLoggedIn = true;
+character = 'mario';
 // arrays
-var names = ['mario', 'luigi', 'cart', 'toad'];
-names.push('boo');
-// names.push(2); returns error because '2' is not a string
-// names[0] = 2; // returns error because '2' is not a string
-var jsMixedArray = ['mario', 2, 'luigi', 3];
-var mixedArray = [1, "mario", 2, "luigi"];
-mixedArray.push('toad');
-mixedArray.push(3);
-// mixedArray.push(true); // returns error because 'true' is not a string or number
-mixedArray[0] = 2;
-// objects - additional properties can't be added because of strict mode 
-var ninja = {
+var ninjas;
+ninjas = ['shaun', 'crystal', 'ryu'];
+// ninjas = [20, 30, 40] returns an error because 'nin
+ninjas.push('china-li'); // not valid operation as ninjas is !== [] when initialized
+var initializedNinjas = [];
+initializedNinjas.push('yos'); // valid operation since we initialized it as an empty array
+// union types
+var mixedArray = [];
+mixedArray.push("hello", 1); // returns 
+//mixedArray.push(false) // returns an error as bool type was not declared in mixedArray
+console.log(mixedArray);
+var mixedVariableUid; //parentheses are optional but mandatory for arrays
+mixedVariableUid = '123';
+mixedVariableUid = 123;
+// objects
+var usersObject;
+usersObject = { name: 'shaun', age: 30 }; // valid object
+usersObject = []; // valid object as arrays are also objects in JS
+var loggedInUsers;
+loggedInUsers = {
     name: 'mario',
-    belt: 'black',
-    age: 30
+    uid: '123',
+    isLoggedIn: true
 };
-ninja.name = 'luigi';
-// ninja.age = '30'; // returns error because '30' is not a number
-ninja = {
-    name: 'yoshi',
-    belt: 'green',
-    //age: 25 age has to be present in the object
-    age: 25,
-    // skills: [] skills is not allowed because of strict mode and was not defined in the original object
-};
+console.log(loggedInUsers);
