@@ -1,12 +1,34 @@
-// const anchor = document.querySelector('a');
-// if(anchor){
-// console.log(anchor.href)
-// }
+// classes
+// a blueprint of an object
 
-// const form = document.querySelector('form')!;
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
+
+    constructor(c: string, d: string, a: number){
+        this.client = c
+        this.details = d
+        this.amount = a
+    }
+
+    format() {
+        return `${this.client} owes $ ${this.amount} for ${this.details}`
+    }
+}
+
+const invoiceOne = new Invoice('mario', 'work on the website', 4500)
+const invoiceTwo = new Invoice('luigi', 'work on the website', 5600)
+
+console.log(invoiceOne, invoiceTwo)
+
+let invoices: Invoice[] = []
+
 // type casting with keyword "as" to tell TS what type of element it is
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 console.log(form.children);
+invoices.push(invoiceOne)
+invoices.push(invoiceTwo)
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;
